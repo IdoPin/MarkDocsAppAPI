@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(TargetDir)\$(TargetFileName) C:\Users\idopi\Desktop\MarkDocsProject\MarkDocsApp\MarkDocsApp\bin\Debug\netcoreapp3.1\dlls" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ODP.NetCore" Version="2.0.12" />
+  </ItemGroup>
+
+</Project>

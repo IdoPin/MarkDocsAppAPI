@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DIContracts\DIContracts.csproj" />
+    <ProjectReference Include="..\MarkDocsAppContracts\MarkDocsAppContracts.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(TargetDir)\$(TargetFileName) C:\Users\idopi\Desktop\MarkDocsProject\MarkDocsApp\MarkDocsApp\bin\Debug\netcoreapp3.1\dlls" />
+  </Target>
+
+</Project>
